@@ -7,4 +7,12 @@ public class Worker {
     private int salary;
     private int age;
 
+
+    public Worker(){
+
+    }
+
+
+
+
 }
