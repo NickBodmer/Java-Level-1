@@ -55,8 +55,8 @@ public class XO {
             }
             aiTurn();
             printMap();
-            if (chekWin0(DOT_X)) {
-                System.out.println("");
+            if (chekWin0(DOT_O)) {
+                System.out.println("Компьютер выиграл");
                 break;
             }
             if (isMapFull()) {
