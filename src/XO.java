@@ -96,14 +96,50 @@ public class XO {
     }
 
     public static boolean chekWin0(char symb) {
-        if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb) return true;
-        if (map[1][0] == symb && map[1][1] == symb && map[1][2] == symb) return true;
-        if (map[2][0] == symb && map[2][1] == symb && map[2][2] == symb) return true;
-        if (map[0][0] == symb && map[1][0] == symb && map[2][0] == symb) return true;
-        if (map[0][1] == symb && map[1][1] == symb && map[2][1] == symb) return true;
-        if (map[0][2] == symb && map[1][2] == symb && map[2][2] == symb) return true;
-        if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) return true;
-        if (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) return true;
+        boolean rowWin=false;
+        boolean colWin=false;
+        boolean diagWin=false;
+        boolean diagWinInverted=false;
+
+        for(int x=0; x < SIZE ; x++){
+            rowWin=true;
+            for(int y=0; y < SIZE ; y++){
+                if(map[x][y] != symb){
+                    rowWin=false;
+                }
+            }
+            if (rowWin) return true;
+        }
+
+        for(int x=0; x < SIZE ; x++){
+            colWin=true;
+            for(int y=0; y < SIZE ; y++){
+                if(map[y][x] != symb){
+                    colWin=false;
+                }
+            }
+            if (colWin) return true;
+        }
+
+        diagWin=true;
+        for(int x=0; x < SIZE ; x++){
+            if(map[x][x] != symb){
+                diagWin=false;
+            }
+        }
+
+        if(diagWin) return true;
+
+        diagWinInverted=true;
+        for(int x=0; x < SIZE ; x++){
+            if(map[x][(SIZE-1)-x] != symb){
+                diagWinInverted=false;
+            }
+        }
+
+        if(diagWinInverted) return true;
+
+
         return false;
 
 
@@ -120,17 +156,5 @@ public class XO {
 
     }
 
-    public static boolean chekWin(char с) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                map[i][i] = c;
-                return true;
 
-            }
-        }
-        for (int i = 0; i < ; i++) {
-            
-        }
-        return false;
-    }
 }
