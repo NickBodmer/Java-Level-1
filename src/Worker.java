@@ -2,17 +2,25 @@ public class Worker {
     private String name;
     private String position;
     private String email;
-    private int phone;
-    private int zarplata;
+    private String phone;
     private int salary;
     private int age;
 
-
-    public Worker(){
-
+    public Worker(String name, String position, String email, String phone, int salary, int age) {
+        this.name = name;
+        this.position = position;
+        this.email = email;
+        this.phone = phone;
+        this.salary = salary;
+        this.age = age;
     }
 
+    public void info() {
+        System.out.println("Имя: " + name + " Профессия: " + position + " Почта: " +
+                email + " Телефон: " + phone + " Заработная плата: " + salary + " Возраст: " + age);
+    }
 
-
-
+    public int getAge() {
+        return age;
+    }
 }
