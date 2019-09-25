@@ -1,10 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-//        Worker worker = new Worker("Ivan", "Driver", "123@inbox.ru",
-//                "89102563986", 10000, 21);
-//
-//        worker.info();
+
 
         Worker[] Array = new Worker[5];
         Array[0] = new Worker("Ivan", "Driver", "324@inbox.ru",
@@ -18,18 +15,21 @@ public class Main {
         Array[4] = new Worker("Denis", "Nurse", "222@inbox.ru", "8965423178",
                 14000, 42);
 
-        for ( Worker w: Array ){
-            if ( w.getAge() > 40 ){
-                w.info();
+
+        for (Worker c : Array) {
+            if (c.getAge() >= 40) {
+                c.info();
             }
+
         }
-        for (int i = 0; i < ; i++) {
-            
-        }
-        }
+    }
+}
+       
+       
+      
 
     
-        }
+  
 
 
 
